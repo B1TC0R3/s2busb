@@ -3,6 +3,7 @@
 ## Notice
 
 This script is tailored towards the Flipper Zero and only supports **Rubber Ducky script version 1.0**!
+However, it also supports special Flipper commands like `CTRL-SHIFT`.
 
 ## Usage
 
@@ -12,6 +13,33 @@ Any commands that are specific to Rubber Ducky script (e.g. `SHIFT DELETE`, `PRI
 ```bash
 ./s2busb.py -i bash_script.sh -o rubber_script.txt
 ./s2busb.py --input bash_script.sh --output rubber_script.txt
+```
+
+Here is a very simple example to print "*Hello World*" on Windows.
+The input script could look like this:
+
+```bash
+# GUI r
+# STRING cmd
+# DELAY 100
+echo 'Hello World'
+
+# DELAY 1000
+exit
+```
+
+Which would then be converted to:
+
+```
+GUI r
+STRING cmd
+DELAY 100
+STRING echo 'Hello World'
+ENTER
+
+DELAY 1000
+STRING exit
+ENTER
 ```
 
 ## Additional Resource
