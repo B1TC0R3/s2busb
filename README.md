@@ -21,6 +21,7 @@ The input script could look like this:
 ```bash
 # GUI r
 # STRING cmd
+# ENTER
 # DELAY 100
 echo 'Hello World'
 
@@ -33,6 +34,7 @@ Which would then be converted to:
 ```
 GUI r
 STRING cmd
+ENTER
 DELAY 100
 STRING echo 'Hello World'
 ENTER
